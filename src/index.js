@@ -1,5 +1,11 @@
 export default {
-  has (inValue){
-    return inValue.marks.some(mark => mark.type === 'bold')
+  renderMark(inProps, inEditor, inNext) {
+    const { children, ...attributes } = inProps;
+    switch (props.mark.type) {
+      case 'bold':
+        return <strong {...attributes}> {children}</strong>;
+      default:
+        return inNext();
+    }
   }
-}
+};
