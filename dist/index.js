@@ -11,7 +11,7 @@ exports.default = {
     var children = inProps.children,
         attributes = _objectWithoutProperties(inProps, ['children']);
 
-    switch (props.mark.type) {
+    switch (inProps.mark.type) {
       case 'bold':
         return React.createElement(
           'strong',
