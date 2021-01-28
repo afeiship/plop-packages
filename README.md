@@ -1,5 +1,5 @@
 # slate-plugin-inline-style
-> SlateJS bold plugin.
+> Slate rte plugin for inilne style.
 
 ## installation
 ```bash
