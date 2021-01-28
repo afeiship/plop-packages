@@ -28,5 +28,9 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "release-it": "^14.2.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
