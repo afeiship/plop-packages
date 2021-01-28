@@ -1,15 +1,11 @@
-# slate-plugin-bold
+# slate-plugin-inline-style
 > SlateJS bold plugin.
 
-## install:
+## installation
 ```bash
-npm install -S afeiship/slate-plugin-bold --registry=https://registry.npm.taobao.org
+npm install -S @jswork/slate-plugin-inline-style
 ```
 
-## usage:
+## usage
 ```js
-//DOCS here!
 ```
-
-## resouces:
-- https://github.com/nossas/slate-editor
