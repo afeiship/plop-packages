@@ -6,34 +6,49 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
 var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _slateHyperscript = require('slate-hyperscript');
+
+var _nextCssText = require('@jswork/next-css-text');
+
+var _nextCssText2 = _interopRequireDefault(_nextCssText);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   name: 'inline-style',
+  importer: function importer(el, children) {
+    if (el.style.cssText) {
+      var value = _nextCssText2.default.css2obj(el.style.cssText);
+      return (0, _slateHyperscript.jsx)('text', { inlineStyle: value }, children);
+    }
+  },
+  // to-html
+  exporter: function exporter(node, children) {
+    if (!children) {
+      if (node.inlineStyle) {
+        var value = node.inlineStyle;
+        return '<span style="' + _nextCssText2.default.obj2css(value) + '">' + node.text + '</span>';
+      }
+    }
+  },
   hooks: {
-    leaf: function leaf(inContext, inProps) {
-      var attributes = inProps.attributes,
-          children = inProps.children,
-          leaf = inProps.leaf;
+    leaf: function leaf(_, _ref) {
+      var attributes = _ref.attributes,
+          children = _ref.children,
+          _leaf = _ref.leaf;
 
-      if (!leaf.inlineStyle) return null;
-
-      var _useState = (0, _react.useState)(leaf.inlineStyle),
-          _useState2 = _slicedToArray(_useState, 2),
-          inlineStyle = _useState2[0],
-          setInlineStyle = _useState2[1];
-
-      (0, _react.useEffect)(function () {
-        setInlineStyle(_extends({}, inlineStyle, leaf.inlineStyle));
-      }, [leaf.inlineStyle]);
-
-      return React.createElement(
-        'span',
-        _extends({}, attributes, { style: inlineStyle }),
-        children
-      );
+      if (_leaf.inlineStyle) {
+        var value = _leaf.inlineStyle;
+        return _react2.default.createElement(
+          'span',
+          _extends({}, attributes, { style: value }),
+          children
+        );
+      }
     }
   }
 };
