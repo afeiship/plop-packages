@@ -41,5 +41,10 @@
     "@jswork/next-css-text": "^1.0.1",
     "@jswork/next-is-block-element": "^1.0.0",
     "@jswork/next-slate-plugin": "^1.0.14"
-  }
+  },
+  "keywords": [
+    "slate",
+    "plugin",
+    "default"
+  ]
 }
