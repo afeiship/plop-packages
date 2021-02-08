@@ -1,9 +1,9 @@
 {
-  "name": "@jswork/slate-plugin-inline-style",
-  "version": "1.0.2",
-  "description": "Slate rte plugin for inilne style.",
+  "name": "@jswork/slate-plugin-default",
+  "version": "1.0.0",
+  "description": "Default slate plugin.",
   "main": "dist/index.js",
-  "repository": "git@github.com:afeiship/slate-plugin-inline-style.git",
+  "repository": "git@github.com:afeiship/slate-plugin-default.git",
   "author": "feizheng <1290657123@qq.com>",
   "license": "MIT",
   "scripts": {
@@ -38,16 +38,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@jswork/next": "^1.0.5",
-    "@jswork/next-css-text": "^1.0.0"
-  },
-  "keywords": [
-    "slate",
-    "plugin",
-    "strong",
-    "inline-style",
-    "b",
-    "color",
-    "css-text"
-  ]
+    "@jswork/next-css-text": "^1.0.1",
+    "@jswork/next-is-block-element": "^1.0.0",
+    "@jswork/next-slate-plugin": "^1.0.14"
+  }
 }

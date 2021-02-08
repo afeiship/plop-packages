@@ -1,8 +1,8 @@
-# slate-plugin-inline-style
-> Slate rte plugin for inilne style.
+# slate-plugin-default
+> Default slate plugin.
 
 
 ## installation
 ```bash
-npm install -S @jswork/slate-plugin-inline-style
+npm install -S @jswork/slate-plugin-default
 ```
