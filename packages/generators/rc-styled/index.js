@@ -1,5 +1,5 @@
 export default function (plop) {
-  plop.setGenerator("rc-styled", {
+  plop.setGenerator("rc:comp", {
     description: "Create a component",
     prompts: [
       {
@@ -17,7 +17,7 @@ export default function (plop) {
     actions: [
       {
         type: "add",
-        path: "src/components/{{dashCase name}}.tsx",
+        path: "src/components/{{dashCase name}}/index.tsx",
         templateFile: "./tpl.tsx.hbs",
       },
     ],
